@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2019-08-11T17:41:55Z" product-name="kreativantbase">
+		<header>
+			<type>database</type>
+			<description>Language labels for database tables/fields belonging to extension 'kreativantbase'</description>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="Test">
+			<source>Test EN</source>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>
