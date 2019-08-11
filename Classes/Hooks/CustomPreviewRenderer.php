@@ -11,7 +11,7 @@ use TYPO3\CMS\Backend\View\PageLayoutViewDrawItemHookInterface;
 /**
  * Contains a preview rendering for the page module of CType="imageslider"
  */
-class SliderPreviewRenderer implements PageLayoutViewDrawItemHookInterface
+class CustomPreviewRenderer implements PageLayoutViewDrawItemHookInterface
 {
     /**
      * Preprocesses the preview rendering of a content element of type "imageslider"
