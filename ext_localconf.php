@@ -46,4 +46,4 @@ if ($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf'][$_EXTKEY]['showaccordion']) {
  * ckeditor configuration file
  */
 $GLOBALS['TYPO3_CONF_VARS']['RTE']['Presets']['advanced'] = 'EXT:kreativantbase/Configuration/PageTS/RTE/Advanced.yaml';
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['teaser'] = \Kreativant\KreativantBase\Hooks\PageLayoutView\SliderPreviewRenderer::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['teaser'] = \Kreativant\KreativantBase\Hooks\PageLayoutView\CustomPreviewRenderer::class;
