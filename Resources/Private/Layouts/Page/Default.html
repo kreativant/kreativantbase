@@ -1,0 +1,57 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<header class="site-header">
+    <div class="container">
+        <f:render partial="Navigation" arguments="{_all}"/>
+    </div>
+</header>
+
+<div class="site-slider">
+    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+</div>
+
+<div id="content" class="site-content {templateName}">
+    <f:render section="Content"/>
+</div>
+
+<div class="site-footer">
+
+    <div class="footer-top">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '101'}" />
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '102'}" />
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '103'}" />
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '104'}" />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer-meta">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="copy">
+                        {copyright}
+                    </span>
+                    <f:cObject typoscriptObjectPath="lib.navigation.metaMenu"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

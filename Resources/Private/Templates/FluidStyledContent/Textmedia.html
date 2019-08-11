@@ -1,0 +1,77 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header">
+
+
+</f:section>
+<f:section name="Main">
+	<div class="row">
+
+		<f:if condition="{gallery.position.vertical} == 'above'">
+			<f:render partial="Media/Gallery" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{gallery.position.horizontal} == 'left'">
+			<f:render partial="Media/Gallery" arguments="{_all}" />
+		</f:if>
+
+
+		<f:if condition="{gallery.position.horizontal} != 'center'">
+			<f:then>
+				<f:switch expression="{data.layout}">
+					<f:case value="0">
+						<div class="col-md-6">
+					</f:case>
+					<f:case value="60">
+						<div class="col-md-6">
+					</f:case>
+					<f:case value="30">
+						<div class="col-md-9">
+					</f:case>
+					<f:case value="40">
+						<div class="col-md-8">
+					</f:case>
+					<f:case value="80">
+						<div class="col-md-4">
+					</f:case>
+					<f:case value="90">
+						<div class="col-md-3">
+					</f:case>
+				</f:switch>
+			</f:then>
+			<f:else>
+				<div class="col-md-12">
+			</f:else>
+		</f:if>
+
+			<f:if condition="{data.bodytext}">
+					<f:then>
+						<div class="ce-bodytext {f:if(condition: '{data.bodytext} == ""', then: ' no-body-text')}">
+							<f:render partial="Header/All" arguments="{_all}" />
+							<f:format.html>{data.bodytext}</f:format.html>
+						</div>
+					</f:then>
+					<f:else>
+							<f:if condition="{data.header}">
+								<div class="ce-bodytext {f:if(condition: '{data.bodytext} == ""', then: ' no-body-text')}">
+									<f:render partial="Header/All" arguments="{_all}" />
+								</div>
+							</f:if>
+					</f:else>
+			</f:if>
+
+		</div>
+
+		<f:if condition="{gallery.position.horizontal} == 'right'">
+			<f:render partial="Media/Gallery" arguments="{_all}" />
+		</f:if>
+
+		<f:if condition="{gallery.position.vertical} == 'below'">
+			<f:render partial="Media/Gallery" arguments="{_all}" />
+		</f:if>
+
+
+	</div>
+
+</f:section>
+</html>

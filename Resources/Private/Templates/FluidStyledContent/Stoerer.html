@@ -1,0 +1,32 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Header">
+</f:section>
+<f:section name="Main">
+
+    <div class="frame frame-stoerer {f:if(condition: '{files}', then: 'bg-image')}">
+
+        <div class="container{f:if(condition: '{data.fullwidth} == 1', then: '-fluid')}">
+
+            <div class="frame-stoerer_body">
+                <f:render partial="Header/All" arguments="{_all}" />
+
+                <div class="intro-body">
+                    <f:format.html>{data.bodytext}</f:format.html>
+                </div>
+            </div>
+
+        </div>
+
+
+        <f:for each="{files}" as="file">
+
+            <div class="frame-stoerer_background background-img"data-small="{f:uri.image(src:file.uid,maxWidth:768,treatIdAsReference:1)}" data-medium="{f:uri.image(src:file.uid,maxWidth:940,treatIdAsReference:1)}" data-large="{f:uri.image(src:file.uid,maxWidth:1140,treatIdAsReference:1)}" data-bigger="{f:uri.image(src:file.uid,maxWidth:1920,treatIdAsReference:1)}" data-src="{f:uri.image(src:file.uid,treatIdAsReference:1)}" style="background-image: url(typo3conf/ext/kreativantbase/Resources/Public/Images/blank.gif);">
+            </div>
+        </f:for>
+
+
+    </div>
+
+</f:section>
+</html>

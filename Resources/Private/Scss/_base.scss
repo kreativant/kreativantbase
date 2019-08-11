@@ -1,0 +1,259 @@
+/* ============================
+   === Body basic -overlflow-x for aos
+ */
+
+body {
+  overflow-x: hidden;
+  font-family: $font-family-base;
+
+  font-size: 16px;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $font-size-base;
+  }
+}
+
+/* ============================
+   === Body basic typo
+   ============================
+ */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  line-height: 1.4;
+}
+
+h1, .h1 {
+  font-family: $font-family-serif;
+  color: #000;
+  font: {
+    size: 33px;
+    weight: 600;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size:36px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size:28px;
+  }
+}
+
+h2, .h2 {
+  font-family: $font-family-serif;
+  color: $body-color;
+  font: {
+    size: 30px;
+    weight:500;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size:26px;
+  }
+
+}
+
+h3, .h3 {
+  font-family: $font-family-serif;
+  color: $body-color;
+  font: {
+    size: 24px;
+    weight:500;
+  }
+}
+
+h4, .h4 {
+  font-family: $font-family-serif;
+  color: $body-color;
+  font: {
+    size: 18px;
+    weight: 500;
+  }
+
+  .sub {
+    font-size:13px;
+  }
+}
+
+h5, .h5 {
+  font-family: $font-family-serif;
+  color: $body-color;
+  font: {
+    size: 14px;
+    weight: 500;
+  }
+}
+
+h6, .h6 {
+  font-family: $font-family-serif;
+  color: $body-color;
+  font: {
+    size: $font-size-base;
+    weight: bold;
+  }
+}
+
+b, strong {
+  font-weight: $font-weight-bold;
+}
+
+p {
+  margin: 0 0 10px 0;
+  padding:0;
+
+  > a {
+    //font-style: italic;
+    transition:all .3s;
+
+    &:hover, &:focus, &:active {
+      text-decoration: none;
+    }
+  }
+}
+
+/* ============================
+   === IMG RESPONSIVE
+   ============================
+ */
+
+img.img-responsive {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+/* ============================
+   === Headings
+   ============================
+ */
+
+// -- make span.h* to block element
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  display:block;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  margin: 30px 0 20px 0;
+}
+
+.ce-bodytext > header {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin: 0  0 20px 0;
+  }
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  &.text-center {
+    margin-top:0;
+  }
+}
+
+
+// -- subline / Small..
+
+small, .small {
+  display:block;
+  clear:both;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: lighten($color-3, 25%);
+
+  margin-top:15px;
+}
+
+/* ===============================
+ * === Accordion
+ * =============================== */
+.accordion {
+
+  .card {
+    margin-bottom: $grid-gutter-width;
+    border:0;
+    background-color: #fff;
+    opacity: .5;
+    transition:all .3s;
+    box-shadow: 0 10px 25px rgba(#000, .15);
+
+    &:hover, &.active {
+      opacity:1;
+    }
+
+    &:last-child {
+      margin-bottom:0;
+    }
+
+    // -- toggle
+    .card-header {
+      border:0;
+      border-color: $body-highlight;
+      background-color: transparent;
+      padding:0;
+      transition:all .3s;
+
+      .h3 {
+        margin:0;
+        font-size: 18px;
+
+        button {
+          padding: $grid-gutter-width;
+
+          cursor: pointer;
+          border:0;
+          outline: none;
+          box-shadow: none;
+          background-color: transparent;
+
+          display: block;
+          width: 100%;
+
+          text-align: left;
+          position: relative;
+
+          i {
+            transition:all .3s;
+            position: absolute;
+            right: $grid-gutter-width;
+            top: 50%;
+            opacity: .5;
+            margin-top: -12px;
+          }
+
+          &:hover, &:focus, &:active {
+            border:0;
+            outline: none;
+            box-shadow: none;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &.active .card-header {
+      border-bottom: 1px solid $body-highlight;
+
+      button i {
+        transform: rotate(180deg);
+      }
+    }
+
+    // -- body
+    .card-body {
+      padding: $grid-gutter-width;
+      h3 {
+        margin-top:0;
+        margin-bottom: 0;
+      }
+
+      h3 + .card-body-text,
+      h3 + .card-body-images,
+      .card-body-images + .card-body-text {
+        margin-top: ($grid-gutter-width/2);
+      }
+    }
+  }
+
+}

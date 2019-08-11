@@ -1,0 +1,74 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+
+
+
+
+
+	<f:if condition="{gallery.position.horizontal} != 'center'">
+
+		<f:then>
+
+			<f:switch expression="{data.layout}">
+
+				<f:case value="0">
+					<div class="col-md-6">
+				</f:case>
+				<f:case value="60">
+					<div class="col-md-6">
+				</f:case>
+				<f:case value="30">
+					<div class="col-md-3">
+				</f:case>
+				<f:case value="40">
+					<div class="col-md-4">
+				</f:case>
+				<f:case value="80">
+					<div class="col-md-8">
+				</f:case>
+				<f:case value="90">
+					<div class="col-md-9">
+				</f:case>
+
+			</f:switch>
+
+		</f:then>
+
+		<f:else>
+
+			<div class="col-md-12">
+
+		</f:else>
+
+	</f:if>
+
+
+			<f:for each="{gallery.rows}" as="row">
+				<div class="row">
+					<f:for each="{row.columns}" as="column" iteration="iterator">
+						<f:if condition="{column.media}">
+
+
+							<f:if condition="{data.layout} == 210">
+								<f:then>
+								<div class="col-6 col-sm-4 col-md-3" style="margin-bottom: 20px;">
+									<f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+								</div>
+								</f:then>
+								<f:else>
+								<div class="{f:if(condition: '{iterator.total} == 1', then: ' col-md-12')}{f:if(condition: '{iterator.total} == 2', then: ' col-md-6')}{f:if(condition: '{iterator.total} == 3', then: ' col-md-4')}{f:if(condition: '{iterator.total} == 4', then: ' col-md-3')}">
+									<f:render partial="Media/Type" arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}" />
+								</div>
+								</f:else>
+							</f:if>
+						</f:if>
+					</f:for>
+				</div>
+			</f:for>
+
+		</div>
+
+
+
+</f:if>
+</html>

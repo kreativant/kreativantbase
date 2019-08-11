@@ -1,0 +1,10 @@
+imports:
+- { resource: "EXT:kreativantbase/Configuration/PageTS/RTE/Basic.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    stylesSet:
+      - { name: "list-tick", element: ['ul'], attributes: { 'class': 'list-tick' }}
+      - { name: "list-cross", element: ['ul'], attributes: { 'class': 'list-cross' }}

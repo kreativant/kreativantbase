@@ -1,0 +1,175 @@
+imports:
+- { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+- { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+- { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+    contentsCss: "/typo3conf/ext/kreativantbase/Resources/Public/Css/RTE/default.css"
+      # will be overridden by the record (if a language is set)
+    defaultContentLanguage: "de"
+    defaultLanguage: "de"
+    uiColor: "#eeeeee"
+    # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
+    stylesSet:
+      # block level styles
+
+      - { name: "lead", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'lead' }}
+      - { name: "active", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'text-active' }}
+      - { name: "danger", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'text-danger' }}
+      - { name: "info", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'text-info' }}
+      - { name: "success", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'text-success' }}
+      - { name: "warning", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'text-warning' }}
+      - { name: "visible-print", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'visible-print' }}
+      - { name: "visible-lg", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'visible-lg' }}
+      - { name: "visible-md", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'visible-md' }}
+      - { name: "visible-sm", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'visible-sm' }}
+      - { name: "visible-xs", element: ['h1', 'h2', 'h3', 'h4','h5', 'h6', 'p', 'td', 'th'], attributes: { 'class': 'visible-xs' }}
+
+      - { name: "table", element: ['table']}
+      - { name: "table-striped", element: ['table'], attributes: { 'class': 'table-striped' }}
+      - { name: "table-bordered", element: ['table'], attributes: { 'class': 'table-bordered' }}
+      - { name: "table-hover", element: ['table'], attributes: { 'class': 'table-hover' }}
+      - { name: "table-condensed", element: ['table'], attributes: { 'class': 'table-condensed' }}
+
+      - { name: "list-unstyled", element: ['ul'], attributes: { 'class': 'list-unstyled' }}
+      - { name: "list-inline", element: ['ul'], attributes: { 'class': 'list-inline' }}
+
+      - { name: "Button", element: ['a'], attributes: { 'class': 'btn' }}
+
+      - { name: "Code block", element: "code" }
+      - { name: "preformatted", element: "pre" }
+      - { name: "Quote / Citation", element: "blockquote" }
+
+
+    format_tags: "p;h1;h2;h3;h4;h5;h6;pre"
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: editing,   groups: [find, selection, spellchecker] }
+      - { name: links }
+      - { name: insert }
+      - { name: tools }
+      - { name: table }
+      - { name: tabletools }
+      - { name: document,  groups: [ mode, document, doctools ] }
+      - { name: others }
+      - "/"
+      - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+      - { name: paragraph,   groups: [ list, indent, blocks, align, bidi ] }
+      - "/"
+      - { name: styles }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - font
+      - find
+      - bidi
+    removePlugins:
+    - image
+
+# ****************************************************
+# Sets the proc options for all default configurations
+# ****************************************************
+processing:
+  # previously known as "ts_css" for transformations
+  mode: default
+  # Tags that are allowed in the content in general
+  allowTags:
+    - a
+    - abbr
+    - acronym
+    - address
+    - article
+    - big
+    - blockquote
+    - br
+    - caption
+    - cite
+    - code
+    - col
+    - colgroup
+    - dd
+    - del
+    - dfn
+    - dl
+    - div
+    - dt
+    - em
+    - footer
+    - header
+    - h1
+    - h2
+    - h3
+    - h4
+    - h5
+    - h6
+    - hr
+    - i
+    - img
+    - ins
+    - kbd
+    - label
+    - li
+    - nav
+    - ol
+    - p
+    - pre
+    - q
+    - samp
+    - section
+    - small
+    - span
+    - strong
+    - style
+    - sub
+    - sup
+    - table
+    - thead
+    - tbody
+    - tfoot
+    - td
+    - th
+    - tr
+    - tt
+    - ul
+    - var
+    - s
+    - u
+    - iframe
+
+
+  ## Tags that are allowed outside of paragraphs
+  allowTagsOutside: [address, article, aside, blockquote, footer, header, hr, nav, section, div]
+
+  ## allowed default attributes
+  allowAttributes: [class, id, title, dir, lang, xml:lang, itemscope, itemtype, itemprop]
+
+  ## CONTENT TO DATABASE
+  HTMLparser_db:
+    ## STRIP ALL ATTRIBUTES FROM THESE TAGS
+    ## If this list of tags is not set, it will default to: b,i,u,br,center,hr,sub,sup,strong,em,li,ul,ol,blockquote,strike.
+    ## However, we want to keep xml:lang attribute on most tags and tags from the default list were cleaned on entry.
+    noAttrib: br
+    # Can be disabled if you trust ckeditor (If Automatic Content Formatting is enabled, this should be OK)
+    # allowTags: %default%
+
+    tags:
+      hr:
+        allowedAttribs:
+          - class
+
+    ## REMOVE OPEN OFFICE META DATA TAGS, WORD 2003 TAGS, LINK, META, STYLE AND TITLE TAGS, AND DEPRECATED HTML TAGS
+    ## We use this rule instead of the denyTags rule so that we can protect custom tags without protecting these unwanted tags.
+    removeTags: [center, font, link, meta, o:p, sdfield, strike, style, title, u]
+
+    ## PROTECT CUSTOM TAGS
+    keepNonMatchedTags: protect

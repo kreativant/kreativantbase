@@ -1,0 +1,11 @@
+# cat=basic; type=boolean; label=Slider ausblenden
+showslider = 0
+
+# cat=basic; type=boolean; label=Teaser ausblenden
+showteaser = 0
+
+# cat=basic; type=boolean; label=Tabs ausblenden
+showtabs = 0
+
+# cat=basic; type=boolean; label=Accordion ausblenden
+showaccordion = 0

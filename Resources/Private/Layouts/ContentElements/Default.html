@@ -1,0 +1,24 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div id="c{data.uid}" class="frame frame-{data.frame_class} frame-type-{data.CType} frame-layout-{data.layout}{f:if(condition: data.space_before_class, then: ' frame-space-before-{data.space_before_class}')}{f:if(condition: data.space_after_class, then: ' frame-space-after-{data.space_after_class}')}"            >
+
+
+    <f:if condition="{data.aos_animate} == 1">
+        <div data-aos="{f:if(condition: '{data.aos_animate_type} == "0"', then: 'fade')}{f:if(condition: '{data.aos_animate_type} == "1"', then: 'fade')}{f:if(condition: '{data.aos_animate_type} == "2"', then: 'fade-up')}{f:if(condition: '{data.aos_animate_type} == "3"', then: 'fade-down')}{f:if(condition: '{data.aos_animate_type} == "4"', then: 'fade-right')}{f:if(condition: '{data.aos_animate_type} == "5"', then: 'fade-left')}" data-aos-once="true">
+    </f:if>
+
+    <f:if condition="{data.parentgrid_CType} != 'kreativantgridelements_pi1'">
+        <div class="container{f:if(condition: '{data.fullwidth} == 1', then: '-fluid')}">
+    </f:if>
+
+    <f:render section="Main"/>
+
+    <f:if condition="{data.parentgrid_CType} != 'kreativantgridelements_pi1'"> 
+        </div>
+    </f:if>
+
+    <f:if condition="{data.aos_animate} == 1">
+        </div>
+    </f:if>
+
+</div>

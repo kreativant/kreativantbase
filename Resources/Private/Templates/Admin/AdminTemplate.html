@@ -1,0 +1,42 @@
+<div class="content-obj-previews-title">
+    <strong>Vorschau</strong>
+</div>
+
+<div class="content-obj-previews">
+    <f:for each="{items}" as="item">
+        <div class="content-obj-item">
+            <f:if condition="{item.image} != '0'">
+                <f:then>
+                    <f:format.html parseFuncTSPath="lib.parseFunc">
+                        {item.image}
+                    </f:format.html>
+                </f:then>
+            </f:if>
+            <div class="content-obj-item-content">
+                <f:if condition="{item.headline}">
+                    <f:then>
+                            <strong>{item.headline}</strong><br>
+                    </f:then>
+                    <f:else>
+                            <strong>{item.ctype}-Element (Keine Headline vergeben)</strong>
+                    </f:else>
+                </f:if>
+                <f:format.html parseFuncTSPath="lib.parseFunc">
+                    {item.bodytext}
+                </f:format.html>
+
+                <f:if condition="{item.edit_url}">
+                    <div class="btn-toolbar">
+                        <a class="btn btn-default" href="{item.edit_url}">
+                            <span class="t3js-icon icon icon-size-small icon-state-default icon-actions-open" data-identifier="actions-open">
+                                <span class="icon-markup">
+                                    <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/actions/actions-open.svg" width="16" height="16">
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </f:if>
+            </div>
+        </div>
+    </f:for>
+</div>
